@@ -21,7 +21,9 @@ defmodule Blog.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Blog do
-  #   pipe_through :api
-  # end
+  scope "/api", Blog do
+    pipe_through :api
+
+    resources "/api/posts", Api.PostController
+  end
 end
