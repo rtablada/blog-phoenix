@@ -14,17 +14,26 @@
         <div class="author-info author-info--short">
           <img class="author-info__pic" src="<%= gravatar post %>" alt="<%= author_name post %>">
           <p class="author-info__name"><%= author_name post %></p>
+          <p class="author-info__date"><%= format_date post.publish_date %></p>
         </div>
       </article>
     <% end %>
 
     <p class="pagination">
       <%= if @page_number > 1 do %>
-        <a href="/?page=<%= @page_number - 1%>">Left</a>
+        <a href="/?page=<%= @page_number - 1%>">
+          <span class="fa fa-angle-double-left"></span>
+
+          <span class="sr-only">Prev</span>
+        </a>
       <% end %>
       <span class="pagination__text">Page <%= @page_number %> of <%= @total_pages %></span>
       <%= if @page_number < @total_pages do %>
-        <a href="/?page=<%= @page_number + 1%>">Right</a>
+        <a href="/?page=<%= @page_number + 1%>">
+          <span class="fa fa-angle-double-right"></span>
+
+          <span class="sr-only">Next</span>
+        </a>
       <% end %>
     </p>
   </div>

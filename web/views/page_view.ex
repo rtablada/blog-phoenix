@@ -16,10 +16,14 @@ defmodule Blog.PageView do
     |> Exgravatar.gravatar_url
   end
 
+
+  def format_date(d) do
+    Timex.format!(d, "{Mshort} {D}, {YYYY}")
+  end
+
   def author_name(post) do
     user = post.user
 
     "#{user.first_name} #{user.last_name}"
   end
-
 end

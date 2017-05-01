@@ -56,7 +56,10 @@ exports.config = {
       ignore: [/web\/static\/vendor/]
     },
     sass: {
-      mode: 'native'
+      mode: 'native',
+      options: {
+        includePaths: ['node_modules/font-awesome/scss']
+      }
     }
   },
 

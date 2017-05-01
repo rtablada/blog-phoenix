@@ -3,9 +3,12 @@ $m-gutter: 1rem;
 $f-serif: 'Eczar', serif;
 $f-sans: 'Tenor Sans', sans-serif;
 
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts';
+
 @import 'reset';
 @import 'layout';
 @import 'hero';
+@import 'font-awesome';
 
 .post-abstract {
   padding-bottom: $m-gutter;
@@ -23,6 +26,20 @@ $f-sans: 'Tenor Sans', sans-serif;
     height: 2rem;
     border-radius: 50%;
   }
+
+  > * + * {
+    margin-left: $m-gutter / 2;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  a {
+    text-decoration: none;
+  }
+
 
   > * + * {
     margin-left: $m-gutter / 2;
