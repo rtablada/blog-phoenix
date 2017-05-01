@@ -1,0 +1,14 @@
+$m-gutter: 1rem;
+
+$f-serif: 'Eczar', serif;
+$f-sans: 'Tenor Sans', sans-serif;
+
+@import 'reset';
+@import 'layout';
+@import 'hero';
+
+.post-abstract {
+  & + & {
+    border-top: 1px #ccc solid;
+  }
+}
