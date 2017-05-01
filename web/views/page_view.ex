@@ -10,4 +10,16 @@ defmodule Blog.PageView do
       |> Enum.slice(0..len)
       |> Enum.join(" ")
   end
+
+  def gravatar(post) do
+    post.user.email
+    |> Exgravatar.gravatar_url
+  end
+
+  def author_name(post) do
+    user = post.user
+
+    "#{user.first_name} #{user.last_name}"
+  end
+
 end

@@ -5,12 +5,27 @@
 
 <div class="section">
   <div class="container">
-  <%= for post <- @posts do %>
-    <article class="post-abstract">
-      <h2 class="post-abstract__title"><%= post.title %></h2>
+    <%= for post <- @posts do %>
+      <article class="post-abstract">
+        <h2 class="post-abstract__title"><%= post.title %></h2>
 
-      <p class="post-abstract__abstract"><%= short(post.content, 50) %>...</p>
-    </article>
-  <% end %>
+        <p class="post-abstract__abstract"><%= short(post.content, 50) %>...</p>
+
+        <div class="author-info author-info--short">
+          <img class="author-info__pic" src="<%= gravatar post %>" alt="<%= author_name post %>">
+          <p class="author-info__name"><%= author_name post %></p>
+        </div>
+      </article>
+    <% end %>
+
+    <p class="pagination">
+      <%= if @page_number > 1 do %>
+        <a href="/?page=<%= @page_number - 1%>">Left</a>
+      <% end %>
+      <span class="pagination__text">Page <%= @page_number %> of <%= @total_pages %></span>
+      <%= if @page_number < @total_pages do %>
+        <a href="/?page=<%= @page_number + 1%>">Right</a>
+      <% end %>
+    </p>
   </div>
 </div>

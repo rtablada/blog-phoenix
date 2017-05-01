@@ -8,7 +8,23 @@ $f-sans: 'Tenor Sans', sans-serif;
 @import 'hero';
 
 .post-abstract {
+  padding-bottom: $m-gutter;
+
   & + & {
     border-top: 1px #ccc solid;
+  }
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+
+  &__pic {
+    height: 2rem;
+    border-radius: 50%;
+  }
+
+  > * + * {
+    margin-left: $m-gutter / 2;
   }
 }

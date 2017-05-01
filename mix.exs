@@ -50,7 +50,8 @@ defmodule Blog.Mixfile do
       {:cowboy, "~> 1.0"},
       {:scrivener_ecto, "~> 1.0"},
       {:html_sanitize_ex, "~> 1.0.0"},
-      {:cmark, "~> 0.7"}
+      {:cmark, "~> 0.7"},
+      {:exgravatar, "~> 2.0.0"}
     ]
   end
 
