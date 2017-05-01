@@ -1,3 +1,8 @@
+<a href="<%= page_path(@conn, :index) %>" class="nav-back">
+  <span class="fa fa-angle-left"></span>
+  Home
+</a>
+
 <div class="section section--top">
   <div class="container">
     <article class="post-abstract">
@@ -14,7 +19,19 @@
       <div class="post-footer">
         <img class="post-footer__pic" src="<%= gravatar @post %>" alt="<%= author_name @post %>">
       </div>
-      <div class="share-footer"></div>
+      <div class="share-footer">
+        <h4 class="share-footer__title">Share</h4>
+        <ul class="share-footer__list">
+          <li>
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=<%= @post.title %>&url=<%= page_url(@conn, :show, @post.slug) %>">
+              <span class="fa fa-twitter fa-fw fa-2x"></span>
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://plus.google.com/share?url=<%= page_url(@conn, :show, @post.slug) %>">
+              <span class="fa fa-google-plus fa-fw fa-2x"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </article>
   </div>
 </div>

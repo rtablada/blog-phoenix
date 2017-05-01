@@ -66,6 +66,7 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts';
   justify-content: center;
 
   a {
+    color: inherit;
     text-decoration: none;
   }
 
@@ -73,4 +74,40 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts';
   > * + * {
     margin-left: $m-gutter / 2;
   }
+}
+
+.share-footer {
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}
+
+.nav-back {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+
+  color: inherit;
 }
