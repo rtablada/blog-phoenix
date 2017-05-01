@@ -7,15 +7,15 @@
   <div class="container">
     <%= for post <- @posts do %>
       <article class="post-abstract">
-        <h2 class="post-abstract__title"><%= post.title %></h2>
+        <a href="<%= page_path(@conn, :show, post.slug) %>" class="post-abstract__link"><h2 class="post-abstract__title"><%= post.title %></h2></a>
 
-        <p class="post-abstract__abstract"><%= short(post.content, 50) %>...</p>
+          <p class="post-abstract__abstract"><%= short(post.content, 50) %>...</p>
 
-        <div class="author-info author-info--short">
-          <img class="author-info__pic" src="<%= gravatar post %>" alt="<%= author_name post %>">
-          <p class="author-info__name"><%= author_name post %></p>
-          <p class="author-info__date"><%= format_date post.publish_date %></p>
-        </div>
+          <div class="author-info author-info--short">
+            <img class="author-info__pic" src="<%= gravatar post %>" alt="<%= author_name post %>">
+            <p class="author-info__name"><%= author_name post %></p>
+            <p class="author-info__date"><%= format_date post.publish_date %></p>
+          </div></a>
       </article>
     <% end %>
 

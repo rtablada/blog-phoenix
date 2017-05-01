@@ -23,4 +23,18 @@ defmodule Blog.PageController do
     index(conn, %{"page" => 1})
   end
 
+  def show(conn, %{"slug" => slug}) do
+    IO.inspect slug
+
+    post = Post
+      |> where([p], p.active == true)
+      |> where([p], p.publish_date < datetime_add(^Ecto.DateTime.utc, 0, "month"))
+      |> where([p], p.slug == ^slug)
+      |> preload(:user)
+      |> Repo.one!
+
+    render conn, "show.html",
+      post: post
+  end
+
 end

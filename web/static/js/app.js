@@ -11,11 +11,17 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
+import 'phoenix_html'
+import hljs from 'highlight.js'
 
-// Import local files
-//
-// Local files can be imported directly using relative
-// paths "./socket" or full ones "web/static/js/socket".
+const blocks = document.querySelectorAll('pre code');
 
-// import socket from "./socket"
+if (blocks.length) {
+  hljs.configure({
+    tabReplace: '  ', // 4 spaces
+  })
+
+  Array.from(blocks, (block) => {
+    hljs.highlightBlock(block);
+  });
+}

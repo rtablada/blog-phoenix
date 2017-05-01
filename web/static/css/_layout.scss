@@ -1,8 +1,12 @@
 .section {
   padding: 1rem;
+
+  &--top {
+    padding-top: 4rem;
+  }
 }
 
 .container {
-  max-width: 60rem;
+  max-width: 50rem;
   margin: auto;
 }

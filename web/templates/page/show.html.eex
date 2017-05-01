@@ -1,0 +1,20 @@
+<div class="section section--top">
+  <div class="container">
+    <article class="post-abstract">
+      <a href="<%= page_path(@conn, :show, @post.slug) %>" class="post-abstract__link"><h2 class="post-abstract__title"><%= @post.title %></h2></a>
+
+      <div class="author-info author-info--short">
+        <img class="author-info__pic" src="<%= gravatar @post %>" alt="<%= author_name @post %>">
+        <p class="author-info__name"><%= author_name @post %></p>
+        <p class="author-info__date"><%= format_date @post.publish_date %></p>
+      </div>
+
+      <div class="post-content"><%= markdown(@post.content) %></div>
+
+      <div class="post-footer">
+        <img class="post-footer__pic" src="<%= gravatar @post %>" alt="<%= author_name @post %>">
+      </div>
+      <div class="share-footer"></div>
+    </article>
+  </div>
+</div>

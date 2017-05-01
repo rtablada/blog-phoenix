@@ -1,6 +1,13 @@
 defmodule Blog.PageView do
   use Blog.Web, :view
 
+  def markdown(str) do
+    str = str
+      |> Cmark.to_html
+
+    {:safe, str}
+  end
+
 
   def short(str, len \\ 10) do
     str

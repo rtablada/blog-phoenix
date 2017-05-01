@@ -5,13 +5,42 @@ $f-sans: 'Tenor Sans', sans-serif;
 
 $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts';
 
+@import 'dark';
 @import 'reset';
 @import 'layout';
 @import 'hero';
 @import 'font-awesome';
 
+.post-content {
+  line-height: 1.8em;
+}
+
+.post-footer {
+  display: flex;
+  align-items: center;
+
+  &__pic {
+    margin: 1rem;
+    padding: 0.2rem;
+    border: 1px #ccc solid;
+    border-radius: 50%;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 1px #ccc solid;
+  }
+}
+
 .post-abstract {
   padding-bottom: $m-gutter;
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+  }
 
   & + & {
     border-top: 1px #ccc solid;

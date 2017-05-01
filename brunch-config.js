@@ -58,7 +58,10 @@ exports.config = {
     sass: {
       mode: 'native',
       options: {
-        includePaths: ['node_modules/font-awesome/scss']
+        includePaths: [
+          'node_modules/font-awesome/scss',
+          'node_modules/highlight.js/styles'
+        ]
       }
     }
   },
