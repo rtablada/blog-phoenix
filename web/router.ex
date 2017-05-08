@@ -24,6 +24,6 @@ defmodule Blog.Router do
   scope "/api", Blog do
     pipe_through :api
 
-    resources "/posts", Api.PostController
+    # resources "/posts", Api.PostController
   end
 end

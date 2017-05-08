@@ -7,7 +7,7 @@ defmodule Blog.Post do
     field :content, :string
     field :image, :string
     field :type, :string
-    field :publish_date, Ecto.DateTime
+    field :publish_date, Timex.Ecto.DateTime
     field :active, :boolean, default: false
     belongs_to :user, Blog.User
 
@@ -22,6 +22,6 @@ defmodule Blog.Post do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:title, :slug, :content, :image, :type, :publish_date, :active])
-    |> validate_required([:title, :slug, :content, :image, :type, :publish_date, :active])
+    |> validate_required([:title, :slug, :content, :type, :publish_date, :active])
   end
 end

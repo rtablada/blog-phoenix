@@ -9,6 +9,7 @@ defmodule Blog.Api.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
+    IO.inspect post_params
     changeset = Post.changeset(%Post{}, post_params)
 
     case Repo.insert(changeset) do

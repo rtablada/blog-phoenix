@@ -28,7 +28,8 @@ defmodule Blog.Mixfile do
       :phoenix_ecto,
       :postgrex,
       :scrivener_ecto,
-      :timex
+      :timex,
+      :timex_ecto
     ]]
   end
 
@@ -53,7 +54,8 @@ defmodule Blog.Mixfile do
       {:html_sanitize_ex, "~> 1.0.0"},
       {:cmark, "~> 0.7"},
       {:exgravatar, "~> 2.0.0"},
-      {:timex, "~> 3.0"}
+      {:timex, "~> 3.0"},
+      {:timex_ecto, "~> 3.0"}
     ]
   end
 
