@@ -55,7 +55,9 @@ defmodule Blog.Mixfile do
       {:cmark, "~> 0.7"},
       {:exgravatar, "~> 2.0.0"},
       {:timex, "~> 3.0"},
-      {:timex_ecto, "~> 3.0"}
+      {:timex_ecto, "~> 3.0"},
+
+      {:distillery, "~> 1.3.5"}
     ]
   end
 
