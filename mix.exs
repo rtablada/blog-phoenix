@@ -34,7 +34,10 @@ defmodule Blog.Mixfile do
       :postgrex,
       :scrivener_ecto,
       :timex,
-      :timex_ecto
+      :timex_ecto,
+      :cmark,
+      :exgravatar,
+      :html_sanitize_ex
     ]]
   end
 
