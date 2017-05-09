@@ -11,10 +11,10 @@ config :blog, Blog.Endpoint,
   server: true,
   version: Mix.Project.config[:version]
 
-config :my_app, Blog.Endpoint,
+config :blog, Blog.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
-config :my_app, Blog.Repo,
+config :blog, Blog.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: System.get_env("DB_USERNAME"),
   password: System.get_env("DB_PASSWORD"),
