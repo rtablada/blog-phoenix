@@ -3,7 +3,7 @@ defmodule Blog.Mixfile do
 
   def project do
     [app: :blog,
-     version: "0.0.${committed_at}",
+     version: "0.0.#{committed_at}",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
