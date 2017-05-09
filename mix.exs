@@ -3,7 +3,7 @@ defmodule Blog.Mixfile do
 
   def project do
     [app: :blog,
-     version: "0.0.1",
+     version: "0.0.${committed_at}",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -11,6 +11,11 @@ defmodule Blog.Mixfile do
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
      deps: deps()]
+  end
+
+  @doc "Unix timestamp of the last commit."
+  def committed_at do
+    System.cmd("git", ~w[log -1 --date=short --pretty=format:%ct]) |> elem(0)
   end
 
   # Configuration for the OTP application.
